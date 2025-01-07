@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0faff;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            margin-top: 5%;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            background-color: #f0faff;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .tooltip {
+            display: inline-block;
+            position: relative;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position the tooltip above the text */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction</h1>
+        <form action="/predictdata" method="post">
+            <label for="pregnancies">Pregnancies:</label>
+            <input type="number" id="pregnancies" name="pregnancies" required><br><br>
+            <label for="glucose">Glucose:</label>
+            <input type="number" id="glucose" name="glucose" required><br><br>
+            <label for="bloodpressure">Blood Pressure:</label>
+            <input type="number" id="bloodpressure" name="bloodpressure" required><br><br>
+            <label for="skinthickness">Skin Thickness:</label>
+            <input type="number" id="skinthickness" name="skinthickness" required><br><br>
+            <label for="insulin">Insulin:</label>
+            <input type="number" id="insulin" name="insulin" required><br><br>
+            <label for="bmi">BMI:</label>
+            <input type="number" id="bmi" name="bmi" step="0.1" required><br><br>
+            <label for="dpf">Diabetes Pedigree Function:</label>
+            <input type="number" id="dpf" name="dpf" step="0.01" required><br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br><br>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

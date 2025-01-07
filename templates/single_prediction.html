@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+        .result-container {
+            text-align: center;
+            margin-top: 20%;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .diabetic {
+            color: #ff4d4d; /* Red for Diabetic */
+            text-shadow: 2px 2px 5px rgba(255, 77, 77, 0.7);
+        }
+        .non-diabetic {
+            color: #28a745; /* Green for Non-Diabetic */
+            text-shadow: 2px 2px 5px rgba(40, 167, 69, 0.7);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1 class="{{ result_class }}">{{ result_text }}</h1>
+    </div>
+</body>
+</html>
